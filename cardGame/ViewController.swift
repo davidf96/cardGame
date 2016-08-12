@@ -37,11 +37,17 @@ class ViewController: UIViewController {
     //Hold the index for the cards that is done
     var finishCardIndex = [Int]()
     
+    var hard: Bool = true
+    
+    //UI Button Array
+    var buttonArray = [UIButton]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // You can make a game loop here. use the randomCard function during the game
+        setUpButtonArray()
         randomCard()    // this is just a test
         
         
@@ -59,111 +65,35 @@ class ViewController: UIViewController {
             // switch used to see what button being clicked
             switch title{
             case "CardView1":
-                cardView1.setImage(UIImage(named: randomCardArray[0]), forState: UIControlState.Normal) // this code used to change image of button
-                cardView1.enabled = false          //Make the button unclickable
-                count += 1                         //Increment count
-                //Add the element to the associated array
-                chosenCard.append(randomCardArray[0])
-                chosenCardIndex.append(0)
-                holdCardView.append(cardView1)
-                //Check how many cards have been choosen
-                if count % 2 == 0 {
-                    check_match()       //Call this function for match when two cards choosen
-                }
+                buttonClicked(0)
                 break
             case "CardView2":
-                cardView2.setImage(UIImage(named: randomCardArray[1]), forState: UIControlState.Normal)
-                cardView2.enabled = false
-                count += 1
-                chosenCard.append(randomCardArray[1])
-                chosenCardIndex.append(1)
-                holdCardView.append(cardView2)
-                //Check how many cards have been choosen
-                if count % 2 == 0 {
-                    check_match()       //Call this function for match when two cards choosen
-                }
+                buttonClicked(1)
                 break
             case "CardView3":
-                cardView3.setImage(UIImage(named: randomCardArray[2]), forState: UIControlState.Normal)
-                cardView3.enabled = false
-                count += 1
-                chosenCard.append(randomCardArray[2])
-                chosenCardIndex.append(2)
-                holdCardView.append(cardView3)
-                //Check how many cards have been choosen
-                if count % 2 == 0 {
-                    check_match()       //Call this function for match when two cards choosen
-                }
+                buttonClicked(2)
                 break
             case "CardView4":
-                cardView4.setImage(UIImage(named: randomCardArray[3]), forState: UIControlState.Normal)
-                cardView4.enabled = false
-                count += 1
-                chosenCard.append(randomCardArray[3])
-                chosenCardIndex.append(3)
-                holdCardView.append(cardView4)
-                //Check how many cards have been choosen
-                if count % 2 == 0 {
-                    check_match()       //Call this function for match when two cards choosen
-                }
+                buttonClicked(3)
                 break
             case "CardView5":
-                cardView5.setImage(UIImage(named: randomCardArray[4]), forState: UIControlState.Normal)
-                cardView5.enabled = false
-                count += 1
-                chosenCard.append(randomCardArray[4])
-                chosenCardIndex.append(4)
-                holdCardView.append(cardView5)
-                //Check how many cards have been choosen
-                if count % 2 == 0 {
-                    check_match()       //Call this function for match when two cards choosen
-                }
+                buttonClicked(4)
                 break
             case "CardView6":
-                cardView6.setImage(UIImage(named: randomCardArray[5]), forState: UIControlState.Normal)
-                cardView6.enabled = false
-                count += 1
-                chosenCard.append(randomCardArray[5])
-                chosenCardIndex.append(5)
-                holdCardView.append(cardView6)
-                //Check how many cards have been choosen
-                if count % 2 == 0 {
-                    check_match()       //Call this function for match when two cards choosen
-                }
+                buttonClicked(5)
                 break
             case "CardView7":
-                cardView7.setImage(UIImage(named: randomCardArray[6]), forState: UIControlState.Normal)
-                cardView7.enabled = false
-                count += 1
-                chosenCard.append(randomCardArray[6])
-                chosenCardIndex.append(6)
-                holdCardView.append(cardView7)
-                //Check how many cards have been choosen
-                if count % 2 == 0 {
-                    check_match()       //Call this function for match when two cards choosen
-                }
+                buttonClicked(6)
                 break
             case "CardView8":
-                cardView8.setImage(UIImage(named: randomCardArray[7]), forState: UIControlState.Normal)
-                cardView8.enabled = false
-                count += 1
-                chosenCard.append(randomCardArray[7])
-                chosenCardIndex.append(7)
-                holdCardView.append(cardView8)
-                //Check how many cards have been choosen
-                if count % 2 == 0 {
-                    check_match()       //Call this function for match when two cards choosen
-                }
+                buttonClicked(7)
                 break
             case "Random": // reset everything, used to test random
-                cardView1.setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
-                 cardView2.setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
-                cardView3.setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
-                cardView4.setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
-                cardView5.setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
-                cardView6.setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
-                cardView7.setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
-                cardView8.setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
+                for i in 0..<8{
+                    buttonArray[i].setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
+                    buttonArray[i].enabled = true
+                }
+                
                 randomCard()
             default: break
                 
@@ -195,6 +125,37 @@ class ViewController: UIViewController {
             }
             print(i)
         }
+        chosenCard.removeAll()
+        chosenCardIndex.removeAll()
+        holdCardView.removeAll()
+        finishCardIndex.removeAll()
+    }
+    
+    //Set up UIButton Array
+    func setUpButtonArray() {
+        buttonArray.append(cardView1)
+        buttonArray.append(cardView2)
+        buttonArray.append(cardView3)
+        buttonArray.append(cardView4)
+        buttonArray.append(cardView5)
+        buttonArray.append(cardView6)
+        buttonArray.append(cardView7)
+        buttonArray.append(cardView8)
+    }
+    
+    //Set image and add everything to the appropriate list when a card is click
+    func buttonClicked(index: Int) {
+        buttonArray[index].setImage(UIImage(named: randomCardArray[index]), forState: UIControlState.Normal)
+        buttonArray[index].enabled = false
+        count += 1
+        chosenCard.append(randomCardArray[index])
+        chosenCardIndex.append(index)
+        holdCardView.append(buttonArray[index])
+        //Check how many cards have been choosen
+        if count % 2 == 0 {
+            check_match()       //Call this function for match when two cards choosen
+        }
+
     }
     
     
@@ -205,19 +166,48 @@ class ViewController: UIViewController {
             finishCardIndex.append(chosenCardIndex[0])
             finishCardIndex.append(chosenCardIndex[1])
         } else {
-            sleep(2)
-            holdCardView[0].setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
+            holdCardView[0].setImage(UIImage(named: "cardFront"),   forState: UIControlState.Normal)
             holdCardView[0].enabled = true
-            
             holdCardView[1].setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
             holdCardView[1].enabled = true
+            if hard == true {
+                switching_cards()
+            }
+            
         }//End else
         
         //Clear Array
         chosenCard.removeAll()
         chosenCardIndex.removeAll()
         holdCardView.removeAll()
-    }
+    }//End check_match()
+    
+    
+    
+    func switching_cards(){
+        var holdIndex = [Int]()
+        var tempIndex = 0
+        while true {
+            let thirdCardIndex = Int(arc4random_uniform(8))
+            if (chosenCardIndex.contains(thirdCardIndex) == false) && (finishCardIndex.contains(thirdCardIndex) == false){
+                chosenCardIndex.append(thirdCardIndex)
+                chosenCard.append(randomCardArray[thirdCardIndex])
+                while true {
+                    let randIndex = Int(arc4random_uniform(3))
+                    if holdIndex.contains(randIndex) == false {
+                        holdIndex.append(randIndex)
+                        randomCardArray[chosenCardIndex[tempIndex]] = chosenCard[randIndex]
+                        tempIndex += 1
+                    }
+                    if tempIndex == 3 {
+                        break
+                    }
+                } //End while
+                break              //End outer while loop
+            } //End if
+        } //End while
+
+    } //End switching_cards()
     
     
     
