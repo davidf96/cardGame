@@ -26,8 +26,8 @@ class ViewController: UIViewController {
     var cardAsignedNum: [Int] = [0,0,0,0]
     let cardArray: [String] = ["card1","card2","card3","card4"]
     
-    //Keep track of clicks
-    var count: Int = 0
+    var count: Int = 0          //Keep track of clicks
+    var maximum: Int = 0           //Keep track of maximum score
     
     //Hold the choosen card(s)
     var chosenCard = [String]()
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     var hard: Bool = true
     
-    //UI Button Array
+    //Create Array to hold the UIButton
     var buttonArray: [UIButton] = [UIButton]()
     
     //Declare a timer
@@ -50,7 +50,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // You can make a game loop here. use the randomCard function during the game
-        setUpButtonArray()
         randomCard()    // this is just a test
     }
 
@@ -90,11 +89,7 @@ class ViewController: UIViewController {
                 buttonClicked(7)
                 break
             case "Random": // reset everything, used to test random
-                for i in 0..<8{
-                    buttonArray[i].setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
-                    buttonArray[i].enabled = true
-                }
-                
+                clear_all()
                 randomCard()
             default: break
                 
@@ -102,12 +97,29 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    
+    //Reset all the global variables
+    func clear_all(){
+        for i in 0..<8{
+            buttonArray[i].setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
+            buttonArray[i].enabled = true
+        }
+        randomCardArray = ["null","null","null","null","null","null","null","null"]
+        cardAsignedNum = [0,0,0,0]
+        count = 0
+        chosenCard.removeAll()
+        chosenCardIndex.removeAll()
+        holdCardView.removeAll()
+        finishCardIndex.removeAll()
+        buttonArray.removeAll()
+    }
+    
     // random card function, used to randomly assigned card to the array. 
     func randomCard(){
         // assign randomCard
         print("random run")
-        cardAsignedNum = [0,0,0,0]
-
+        
         for i in 0..<8{
             var assigned = false
             while(assigned==false)
@@ -126,10 +138,8 @@ class ViewController: UIViewController {
             }
             print(i)
         }
-        chosenCard.removeAll()
-        chosenCardIndex.removeAll()
-        holdCardView.removeAll()
-        finishCardIndex.removeAll()
+        
+        setUpButtonArray()    //Set up the array to hold the UIButton
     }
     
     //Set up UIButton Array
@@ -186,7 +196,13 @@ class ViewController: UIViewController {
         chosenCard.removeAll()
         chosenCardIndex.removeAll()
         holdCardView.removeAll()
+        
+        //check if the game win or not
+        
+        
     }//End check_match()
+    
+    
     
     func button_enable(enable: Bool){
         for i in 0..<8{
@@ -206,6 +222,9 @@ class ViewController: UIViewController {
             if (chosenCardIndex.contains(thirdCardIndex) == false) && (finishCardIndex.contains(thirdCardIndex) == false){
                 chosenCardIndex.append(thirdCardIndex)
                 chosenCard.append(randomCardArray[thirdCardIndex])
+                
+                //Add effect
+                
                 while true {
                     let randIndex = Int(arc4random_uniform(3))
                     if holdIndex.contains(randIndex) == false {
@@ -216,15 +235,21 @@ class ViewController: UIViewController {
                     if tempIndex == 3 {
                         break
                     }
-                } //End while
+                } //End while inner
                 break              //End outer while loop
             } //End if
-        } //End while
+        } //End while outer
 
-    } //End switching_cards()
+    } //End switching_cards
     
     
     
+    //Reset everything and update maximum score
+    //show the completion image and the score
+    func game_win(){
+        maximum = count
+        clear_all()
+    }
     
 }//End of program
 
