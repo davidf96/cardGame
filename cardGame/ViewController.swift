@@ -40,7 +40,10 @@ class ViewController: UIViewController {
     var hard: Bool = true
     
     //UI Button Array
-    var buttonArray = [UIButton]()
+    var buttonArray: [UIButton] = [UIButton]()
+    
+    //Declare a timer
+    var timer = NSTimer()
     
     
     override func viewDidLoad() {
@@ -49,8 +52,6 @@ class ViewController: UIViewController {
         // You can make a game loop here. use the randomCard function during the game
         setUpButtonArray()
         randomCard()    // this is just a test
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -153,7 +154,10 @@ class ViewController: UIViewController {
         holdCardView.append(buttonArray[index])
         //Check how many cards have been choosen
         if count % 2 == 0 {
-            check_match()       //Call this function for match when two cards choosen
+            button_enable(false)
+            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(ViewController.check_match), userInfo: nil, repeats: false)
+            //check_match()       //Call this function for match when two cards choosen
+            
         }
 
     }
@@ -165,11 +169,13 @@ class ViewController: UIViewController {
         if chosenCard[0] == chosenCard[1] {
             finishCardIndex.append(chosenCardIndex[0])
             finishCardIndex.append(chosenCardIndex[1])
+            button_enable(true)
         } else {
             holdCardView[0].setImage(UIImage(named: "cardFront"),   forState: UIControlState.Normal)
             holdCardView[0].enabled = true
             holdCardView[1].setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
             holdCardView[1].enabled = true
+            button_enable(true)
             if hard == true {
                 switching_cards()
             }
@@ -182,8 +188,16 @@ class ViewController: UIViewController {
         holdCardView.removeAll()
     }//End check_match()
     
+    func button_enable(enable: Bool){
+        for i in 0..<8{
+            if (finishCardIndex.contains(i) == false) && (chosenCardIndex.contains(i) == false){
+                buttonArray[i].enabled = enable
+            }//End if
+        }//End for
+    }
     
-    
+    //Hard mode
+    //Switch three card if the chosen card does not match
     func switching_cards(){
         var holdIndex = [Int]()
         var tempIndex = 0
