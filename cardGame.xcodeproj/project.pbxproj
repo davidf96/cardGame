@@ -12,6 +12,7 @@
 		18402C061D49C3150024434A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18402C041D49C3150024434A /* Main.storyboard */; };
 		18402C081D49C3150024434A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18402C071D49C3150024434A /* Assets.xcassets */; };
 		18402C0B1D49C3150024434A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18402C091D49C3150024434A /* LaunchScreen.storyboard */; };
+		18D023CC1D824A2800F0CCE9 /* ViewControllerEasy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D023CB1D824A2800F0CCE9 /* ViewControllerEasy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		18402C071D49C3150024434A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18402C0A1D49C3150024434A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18402C0C1D49C3150024434A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18D023CB1D824A2800F0CCE9 /* ViewControllerEasy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerEasy.swift; path = ../ViewControllerEasy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		18402BFF1D49C3150024434A /* cardGame */ = {
 			isa = PBXGroup;
 			children = (
+				18D023CB1D824A2800F0CCE9 /* ViewControllerEasy.swift */,
 				18402C001D49C3150024434A /* AppDelegate.swift */,
 				18402C021D49C3150024434A /* ViewController.swift */,
 				18402C041D49C3150024434A /* Main.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18402C031D49C3150024434A /* ViewController.swift in Sources */,
+				18D023CC1D824A2800F0CCE9 /* ViewControllerEasy.swift in Sources */,
 				18402C011D49C3150024434A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +290,7 @@
 				18402C111D49C3150024434A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
