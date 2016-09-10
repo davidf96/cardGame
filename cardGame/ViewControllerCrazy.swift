@@ -1,41 +1,29 @@
 //
-//  ViewControllerEasy.swift
+//  ViewControllerCrazy.swift
 //  cardGame
 //
-//  Created by AMY on 16/9/8.
-//  Copyright © 2016年 AMY/David. All rights reserved.
+//  Created by Yong Hua Feng on 9/10/16.
+//  Copyright © 2016 AMY/David. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class ViewControllerEasy:UIViewController
-{
+class ViewControllerCrazy : UIViewController{
     
     @IBOutlet weak var cardView1: UIButton!
-    
     @IBOutlet weak var cardView2: UIButton!
-    
     @IBOutlet weak var cardView3: UIButton!
-    
     @IBOutlet weak var cardView4: UIButton!
-    
     @IBOutlet weak var cardView5: UIButton!
-    
     @IBOutlet weak var cardView6: UIButton!
-    
     @IBOutlet weak var cardView7: UIButton!
-    
     @IBOutlet weak var cardView8: UIButton!
-    
     @IBOutlet weak var cardView9: UIButton!
-    
     @IBOutlet weak var cardView10: UIButton!
-    
     @IBOutlet weak var cardView11: UIButton!
-    
     @IBOutlet weak var cardView12: UIButton!
-
+    
     
     //create array
     //used to link random card's position with array, later used to change the actural card
@@ -44,7 +32,7 @@ class ViewControllerEasy:UIViewController
     let cardArray: [String] = ["card1","card2","card3","card4","card5","card6"]
     
     var count: Int = 0          //Keep track of clicks
-    var score: Int = 0           //Keep track of  score
+    var score: Int = 0           //Keep track of maximum score
     
     //Hold the choosen card(s)
     var chosenCard = [String]()
@@ -54,12 +42,15 @@ class ViewControllerEasy:UIViewController
     //Hold the index for the cards that is done
     var finishCardIndex = [Int]()
     
+    var hard: Bool = true
     
     //Create Array to hold the UIButton
     var buttonArray: [UIButton] = [UIButton]()
     
     //Declare a timer
     var timer = NSTimer()
+
+    
     
     
     override func viewDidLoad() {
@@ -73,6 +64,8 @@ class ViewControllerEasy:UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     // Connected all the Card View button to this Action (ctr button and drag it to this function , apply to all button)
     @IBAction func ClickImage(sender: UIButton) {
@@ -162,7 +155,6 @@ class ViewControllerEasy:UIViewController
                 {
                     randomCardArray[i] = cardArray[ran]
                     cardAsignedNum[ran] = cardAsignedNum[ran]+1
-                    print("randomNum: ", ran, " card: ",cardArray[ran], " CardAssigned: ", cardAsignedNum[ran] )
                     assigned = true
                 }
             }
@@ -215,10 +207,7 @@ class ViewControllerEasy:UIViewController
             finishCardIndex.append(chosenCardIndex[0])
             finishCardIndex.append(chosenCardIndex[1])
             button_enable(true)
-            // add 50 points
             score += 50
-            
-            
         } else {
             holdCardView[0].setImage(UIImage(named: "cardFront"),   forState: UIControlState.Normal)
             holdCardView[0].enabled = true
@@ -226,7 +215,9 @@ class ViewControllerEasy:UIViewController
             holdCardView[1].enabled = true
             button_enable(true)
             score -= 5
-
+            if hard == true {
+                switching_cards()
+            }
             
         }//End else
         
@@ -253,6 +244,37 @@ class ViewControllerEasy:UIViewController
         }//End for
     }
     
+    //Hard mode
+    //Switch three card if the chosen card does not match
+    func switching_cards(){
+        var holdIndex = [Int]()
+        var tempIndex = 0
+        while true {
+            let thirdCardIndex = Int(arc4random_uniform(12))
+            if (chosenCardIndex.contains(thirdCardIndex) == false) && (finishCardIndex.contains(thirdCardIndex) == false){
+                chosenCardIndex.append(thirdCardIndex)
+                chosenCard.append(randomCardArray[thirdCardIndex])
+                
+                //Add effect
+                
+                while true {
+                    let randIndex = Int(arc4random_uniform(3))
+                    if holdIndex.contains(randIndex) == false {
+                        holdIndex.append(randIndex)
+                        randomCardArray[chosenCardIndex[tempIndex]] = chosenCard[randIndex]
+                        tempIndex += 1
+                    }
+                    if tempIndex == 3 {
+                        break
+                    }
+                } //End while inner
+                break              //End outer while loop
+            } //End if
+        } //End while outer
+        
+    } //End switching_cards
+    
+    
     
     //Reset everything and update maximum score
     //show the completion image and the score
@@ -270,9 +292,7 @@ class ViewControllerEasy:UIViewController
         presentViewController(refreshAlert, animated: true, completion: nil)
         clear_all()
         randomCard()
-
+        
     }
     
-    
-
-}
+} //End of program

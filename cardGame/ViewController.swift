@@ -104,7 +104,7 @@ class ViewController: UIViewController {
             case "CardView12":
                 buttonClicked(11)
                 break
-            case "Random": // reset everything, used to test random
+            case "Reset": // reset everything, used to test random
                 clear_all()
                 randomCard()
                 
@@ -253,13 +253,13 @@ class ViewController: UIViewController {
                 //Add effect
                 
                 while true {
-                    let randIndex = Int(arc4random_uniform(3))
+                    let randIndex = Int(arc4random_uniform(2))
                     if holdIndex.contains(randIndex) == false {
                         holdIndex.append(randIndex)
                         randomCardArray[chosenCardIndex[tempIndex]] = chosenCard[randIndex]
                         tempIndex += 1
                     }
-                    if tempIndex == 3 {
+                    if tempIndex == 2 {
                         break
                     }
                 } //End while inner
