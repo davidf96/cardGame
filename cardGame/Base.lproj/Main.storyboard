@@ -130,10 +130,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsC-4u-uv3">
-                                <rect key="frame" x="168" y="600" width="39" height="30"/>
+                                <rect key="frame" x="231" y="600" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
                                     <action selector="ClickImage:" destination="ZDx-EZ-NZi" eventType="touchUpInside" id="i6F-l5-pcO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcU-t6-rFO">
+                                <rect key="frame" x="108" y="600" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="rRz-v6-C0G" kind="presentation" id="Gk9-Xd-mQi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -158,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2eZ-ed-QA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-120.5" y="1846.5"/>
+            <point key="canvasLocation" x="-76.5" y="1914.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -173,7 +180,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZA-aN-JJb">
-                                <rect key="frame" x="146" y="593" width="82" height="30"/>
+                                <rect key="frame" x="231" y="600" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
                                     <action selector="ClickImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EjX-xx-Zul"/>
@@ -263,6 +270,13 @@
                                     <action selector="ClickImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KHK-Ty-eeF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqi-ji-GbX">
+                                <rect key="frame" x="108" y="600" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="rRz-v6-C0G" kind="presentation" id="9l4-jw-m6m"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -299,7 +313,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbU-FF-nv3">
-                                <rect key="frame" x="164" y="261" width="46" height="30"/>
+                                <rect key="frame" x="164" y="139" width="46" height="30"/>
                                 <state key="normal" title="Easy"/>
                                 <connections>
                                     <segue destination="7A2-e9-HnL" kind="popoverPresentation" popoverAnchorView="wbU-FF-nv3" id="YI3-5j-ypc">
@@ -308,17 +322,24 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiw-eP-4Es">
-                                <rect key="frame" x="164" y="325" width="46" height="30"/>
+                                <rect key="frame" x="164" y="209" width="46" height="30"/>
                                 <state key="normal" title="Hard"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="n69-ii-FAD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOB-uI-7DH">
-                                <rect key="frame" x="167" y="390" width="40" height="30"/>
+                                <rect key="frame" x="167" y="280" width="40" height="30"/>
                                 <state key="normal" title="Crazy"/>
                                 <connections>
                                     <segue destination="ZDx-EZ-NZi" kind="presentation" id="8aL-u5-mLV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9r-g5-Gvy">
+                                <rect key="frame" x="170" y="361" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="sGz-C8-Od4" kind="presentation" id="klC-zU-yt0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -425,7 +446,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LO-L8-Dow">
-                                <rect key="frame" x="146" y="594" width="82" height="30"/>
+                                <rect key="frame" x="231" y="600" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
                                     <action selector="ClickImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KYZ-iv-Cb8"/>
@@ -438,6 +459,13 @@
                                 <connections>
                                     <action selector="ClickImage:" destination="7A2-e9-HnL" eventType="touchUpInside" id="4P3-8D-Kvj"/>
                                     <action selector="ClickImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z7r-KL-ptI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47f-pt-NW5">
+                                <rect key="frame" x="108" y="600" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="rRz-v6-C0G" kind="presentation" id="dBf-5I-AsN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiR-DF-UKd">
@@ -475,4 +503,7 @@
     <resources>
         <image name="cardFront" width="200" height="200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dBf-5I-AsN"/>
+    </inferredMetricsTieBreakers>
 </document>

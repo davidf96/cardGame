@@ -200,7 +200,7 @@ class ViewControllerEasy:UIViewController
         //Check how many cards have been choosen
         if count % 2 == 0 {
             button_enable(false)
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(ViewController.check_match), userInfo: nil, repeats: false)
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(ViewControllerEasy.check_match), userInfo: nil, repeats: false)
             //check_match()       //Call this function for match when two cards choosen
             
         }
