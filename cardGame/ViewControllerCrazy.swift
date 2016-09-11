@@ -192,13 +192,15 @@ class ViewControllerCrazy : UIViewController{
         //Check how many cards have been choosen
         if count % 2 == 0 {
             button_enable(false)
-            if chosenCard[0] != chosenCard[1]{
+            if (chosenCard[0] != chosenCard[1]){
                 while true {
                     let thirdCardIndex = Int(arc4random_uniform(12))
                     if (chosenCardIndex.contains(thirdCardIndex) == false) && (finishCardIndex.contains(thirdCardIndex) == false){
                         chosenCardIndex.append(thirdCardIndex)
                         chosenCard.append(randomCardArray[thirdCardIndex])
                         buttonArray[thirdCardIndex].setImage(UIImage(named: randomCardArray[thirdCardIndex]), forState: UIControlState.Normal)
+                        holdCardView.append(buttonArray[thirdCardIndex])
+                        break
                     }
                 }
             }
@@ -254,37 +256,19 @@ class ViewControllerCrazy : UIViewController{
     }
     
     
-    func flip_card(){
-        holdCardView[0].setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
-        holdCardView[1].setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
-        holdCardView[2].setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
-        holdCardView[0].enabled = true
-        holdCardView[1].enabled = true
-        holdCardView[2].enabled = true
-    }
+    //func flip_card(){
+        //holdCardView[0].setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
+        //holdCardView[1].setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
+        //holdCardView[2].setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
+        //holdCardView[0].enabled = true
+        //holdCardView[1].enabled = true
+        //holdCardView[2].enabled = true
+    //}
     
     //Hard mode
     //Switch three card if the chosen card does not match
     func switching_cards(){
-        //var holdIndex = [Int]()
-        //var tempIndex = 0
-        //while true {
-            //let thirdCardIndex = Int(arc4random_uniform(12))
-            //if (chosenCardIndex.contains(thirdCardIndex) == false) && (finishCardIndex.contains(thirdCardIndex) == false){
-                //chosenCardIndex.append(thirdCardIndex)
-                //chosenCard.append(randomCardArray[thirdCardIndex])
-                //holdCardView.append(buttonArray[thirdCardIndex])
-                
-                //Add effect
-                //holdCardView[0].setImage(UIImage(named: chosenCard[0]), forState: UIControlState.Normal)
-                //holdCardView[1].setImage(UIImage(named: chosenCard[1]), forState: UIControlState.Normal)
-                //holdCardView[2].setImage(UIImage(named: chosenCard[2]), forState: UIControlState.Normal)
-                
-                //flip_card()
-                //timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(ViewControllerCrazy.flip_card), userInfo: nil, repeats: false)
-                
-                
-                
+        
         let randomNum = (chosenCardIndex[0] + chosenCardIndex[1] + chosenCardIndex[2]) % 5
                 
         if randomNum == 1{
