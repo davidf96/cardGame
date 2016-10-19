@@ -1,4 +1,3 @@
-//
 //  ViewController.swift
 //  cardGame
 //
@@ -209,7 +208,7 @@ class ViewController: UIViewController {
             holdCardView[1].setImage(UIImage(named: "cardFront"), forState: UIControlState.Normal)
             holdCardView[1].enabled = true
             button_enable(true)
-            score -= 5
+            score -= 10
             if hard == true {
                 switching_cards()
             }

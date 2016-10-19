@@ -17,9 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lL9-5G-HQ9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="670"/>
+                                <state key="normal" title="startBackground" backgroundImage="start">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHx-Jz-bnw">
-                                <rect key="frame" x="162" y="240" width="51" height="30"/>
-                                <state key="normal" title="Start"/>
+                                <rect key="frame" x="89" y="20" width="141" height="565"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="rRz-v6-C0G" kind="presentation" id="RY5-zf-0VQ"/>
                                 </connections>
@@ -31,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmZ-xJ-ET9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-282" y="318"/>
+            <point key="canvasLocation" x="-282.5" y="317.5"/>
         </scene>
         <!--View Controller Crazy-->
         <scene sceneID="vgw-Pd-gxX">
@@ -45,6 +53,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ID4-5d-Tzi">
+                                <rect key="frame" x="0.0" y="-1" width="375" height="670"/>
+                                <state key="normal" title="backGround" backgroundImage="background">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ax-Ji-RMN">
                                 <rect key="frame" x="20" y="90" width="90" height="90"/>
                                 <state key="normal" title="CardView1" image="cardFront"/>
@@ -179,6 +193,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aU6-hN-zgn">
+                                <rect key="frame" x="0.0" y="-1" width="375" height="670"/>
+                                <state key="normal" title="background" backgroundImage="background">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZA-aN-JJb">
                                 <rect key="frame" x="231" y="600" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
@@ -312,9 +332,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZZ-dn-UdH">
+                                <rect key="frame" x="0.0" y="-1" width="375" height="670"/>
+                                <state key="normal" title="modeBackground" backgroundImage="mode">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbU-FF-nv3">
-                                <rect key="frame" x="164" y="139" width="46" height="30"/>
-                                <state key="normal" title="Easy"/>
+                                <rect key="frame" x="59" y="151" width="110" height="57"/>
+                                <state key="normal" title="Easy">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="7A2-e9-HnL" kind="popoverPresentation" popoverAnchorView="wbU-FF-nv3" id="YI3-5j-ypc">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -322,24 +350,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiw-eP-4Es">
-                                <rect key="frame" x="164" y="209" width="46" height="30"/>
-                                <state key="normal" title="Hard"/>
+                                <rect key="frame" x="123" y="231" width="111" height="41"/>
+                                <state key="normal" title="Hard">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="n69-ii-FAD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOB-uI-7DH">
-                                <rect key="frame" x="167" y="280" width="40" height="30"/>
-                                <state key="normal" title="Crazy"/>
+                                <rect key="frame" x="214" y="307" width="131" height="53"/>
+                                <state key="normal" title="Crazy">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="ZDx-EZ-NZi" kind="presentation" id="8aL-u5-mLV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9r-g5-Gvy">
-                                <rect key="frame" x="170" y="361" width="34" height="30"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="sGz-C8-Od4" kind="presentation" id="klC-zU-yt0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -365,6 +390,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNA-nM-ULb">
+                                <rect key="frame" x="0.0" y="-1" width="375" height="670"/>
+                                <state key="normal" title="background" backgroundImage="background">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFf-mw-7lT">
                                 <rect key="frame" x="20" y="91" width="90" height="90"/>
                                 <state key="normal" title="CardView1" image="cardFront"/>
@@ -501,9 +532,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background" width="790" height="1569"/>
         <image name="cardFront" width="200" height="200"/>
+        <image name="mode" width="795" height="1631"/>
+        <image name="start" width="972" height="1582"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dBf-5I-AsN"/>
+        <segue reference="RY5-zf-0VQ"/>
     </inferredMetricsTieBreakers>
 </document>
